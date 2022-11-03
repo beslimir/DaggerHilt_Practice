@@ -1,5 +1,6 @@
 package com.beslimir.daggerhilt_practice.di
 
+import android.app.Application
 import com.beslimir.daggerhilt_practice.data.remote.MyApi
 import com.beslimir.daggerhilt_practice.data.repository.MyRepositoryImpl
 import com.beslimir.daggerhilt_practice.domain.repository.MyRepository
@@ -25,8 +26,8 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideMyRepository(myApi: MyApi): MyRepository {
-        return MyRepositoryImpl(myApi)
+    fun provideMyRepository(myApi: MyApi, appContext: Application): MyRepository {
+        return MyRepositoryImpl(myApi, appContext)
     }
 
 }
