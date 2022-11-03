@@ -9,6 +9,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -26,8 +27,18 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideMyRepository(myApi: MyApi, appContext: Application): MyRepository {
-        return MyRepositoryImpl(myApi, appContext)
+    fun provideMyRepository(myApi: MyApi, appContext: Application, @Named("hello2") myString: String): MyRepository {
+        return MyRepositoryImpl(myApi, appContext, myString)
     }
+
+    @Provides
+    @Singleton
+    @Named("hello1")
+    fun provideString01() = "Hello 01"
+
+    @Provides
+    @Singleton
+    @Named("hello2")
+    fun provideString02() = "Hello 02"
 
 }
