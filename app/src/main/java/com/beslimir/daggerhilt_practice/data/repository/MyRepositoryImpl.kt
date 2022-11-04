@@ -4,11 +4,13 @@ import android.app.Application
 import com.beslimir.daggerhilt_practice.R
 import com.beslimir.daggerhilt_practice.data.remote.MyApi
 import com.beslimir.daggerhilt_practice.domain.repository.MyRepository
+import javax.inject.Inject
+import javax.inject.Named
 
-class MyRepositoryImpl(
+class MyRepositoryImpl @Inject constructor(
     private val myApi: MyApi,
     private val appContext: Application,
-    private val myString: String
+    @Named("hello2") private val myString: String
 ): MyRepository {
 
     init {
