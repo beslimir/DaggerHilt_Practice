@@ -1,6 +1,6 @@
 # DaggerHilt_Practice
 
-This project is made for the purpose of making a presentation to the topic of DaggerHilt.
+This project is made for the purpose of making a presentation to the topic of DaggerHilt (project used for making a presentation).
 
 Annotations:
 - Provides
